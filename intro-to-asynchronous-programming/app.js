@@ -10,5 +10,10 @@ const readDataFiles = async () => {
 }
 
 readDataFiles();
-
 console.log('run this as soon as possible');
+
+try{
+  console.log(hi);
+}catch(error){
+  console.log("You have a problem in: " + error)
+};
