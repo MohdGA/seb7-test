@@ -1,30 +1,26 @@
 const fs = require('node:fs/promises');
+const { resolve } = require('node:path');
 
-// const readDataFiles = async () => {
-//   const userData = await fs.readFile('test.txt', 'utf8');
-//   console.log(userData);
-//   const profileData = await fs.readFile('test2.txt', 'utf8');
-//   console.log(profileData);
-//   const userHistory = await fs.readFile('test3.txt', 'utf8');
-//   console.log(userHistory);
-// }
+const myPromise = new Promise((resolve, reject) => {
+  // Asynchronous opreation
+  setTimeout(() => {
+    const sum = 2+2;
+   return resolve(sum);
+  },1000);
+});
 
-// readDataFiles();
-// console.log('run this as soon as possible');
+async function add() {
+  const sum = await myPromise;
+  return sum;
+};
 
-// try{
-//   const forthFile = async () => {
-//     const fileForth = await fs.readFile('test4.txt', (err,data));
-//     console.log(fileForth)
-//   }
-// }catch(error){
-//   console.log("You have a problem in: " + error);
-// };
-console.log("First");
+try{
+  console.log(add());
+  console.log(sum);
+}catch(error){
+  console.log('Problem at: ' + error);
+}
 
-setTimeout(() => {
-  console.log("Second");
-}, 1000);
 
-console.log("Third");
+
 
